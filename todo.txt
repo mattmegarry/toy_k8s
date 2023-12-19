@@ -1,0 +1,6 @@
+- Note setup steps - installing docker, kubenetes cli, ssh key stuff etc (see Jon's presentation if needed)
+- Note the creation of an access token in docker hub to use for $ docker login
+- Consider this:
+Logging in with your password grants your terminal complete access to your account. 
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+- Also consider access token permissions (upon creation)

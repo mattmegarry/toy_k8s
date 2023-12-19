@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 10px;
+}
+
+.header {
+  height: 60px;
+}
+
+.number-drawing {
+  display: flex;
+  flex-direction: row;
+}
+
+#number-drawing {
+  background-color: #000000;
+}
+
+#results {
+  width: 282px;
+  height: 282px;
+  margin-left: 20px;
+}
+
+.endpoint {
+  width: 300px;
+  margin: 20px 0px;
+}

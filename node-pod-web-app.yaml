@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mnist-web-app
+  labels:
+    name: mnist-web-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mnist-web-app
+  namespace: mnist-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mnist-web-app
+  template:
+    metadata:
+      labels:
+        app: mnist-web-app
+    spec:
+      containers:
+        - name: mnist-web-app
+          image: mattmegarry/minst-web-app:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3456
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mnist-web-app-service
+  namespace: mnist-web-app
+spec:
+  selector:
+    app: mnist-web-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3456
